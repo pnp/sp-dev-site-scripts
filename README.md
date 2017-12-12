@@ -1,3 +1,14 @@
+# SharePoint Site Script samples
+
+You can use Site Scripts to customize how SharePoint sites are being provisioned. To do this, you construct a JSON object that describes the action to be applied when site is provisioned. You can also start external flow for the additional actions, if needed.
+
+This is a open source repository to share different kind of Site Scripts between community. Check [**Samples**](./samples) folder for what's currently available. Have you build one which you can share? - **We do welcome contributions**.
+
+Image to be added
+
+You can find more details around the Site Script and Site Design capability from official SharePoint Dev documentation. 
+
+- [Title of the Document](#)
 
 # Contributing
 
