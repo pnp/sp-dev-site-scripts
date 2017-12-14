@@ -8,7 +8,7 @@ This is a open source repository to share different kind of Site Scripts between
 
 You can find more details around the Site Script and Site Design capability from official SharePoint Dev documentation. 
 
-- [https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-overview](https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-overview)
+- [SharePoint site design and site script overview](https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-overview)
 
 # Contributing
 
