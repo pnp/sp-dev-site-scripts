@@ -26,7 +26,7 @@ Version|Date|Comments
 
 Here is a sample theme you can use to try this out:
 
-```json
+```ps
 $ContosoThemeSample=
 @{
 "themePrimary" = "#3ad600";
