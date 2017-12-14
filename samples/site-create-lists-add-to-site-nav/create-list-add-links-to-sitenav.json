@@ -1,0 +1,134 @@
+{
+    "$schema": "schema.json",
+        "actions": [
+            {
+                "verb": "createSPList",
+                "listName": "Custom List",
+                "templateType": 100,
+                "subactions": [
+                    {
+                        "verb": "SetDescription",
+                        "description": "Custom list to illustrate SharePoint site scripting"
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Text",
+                        "displayName": "Text Field",
+                        "isRequired": false,
+                        "addToDefaultView": true
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Number",
+                        "displayName": "Number Field",
+                        "addToDefaultView": true,
+                        "isRequired": true
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "User",
+                        "displayName": "User Field",
+                        "addToDefaultView": true,
+                        "isRequired": true
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Note",
+                        "displayName": "Note Field",
+                        "isRequired": false
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Boolean",
+                        "displayName": "Boolean Field",
+                        "isRequired": false
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "DateTime",
+                        "displayName": "Date Time Field",
+                        "isRequired": false
+                    }
+                ]
+            },
+            {
+                "verb": "createSPList",
+                "listName": "Custom Library",
+                "templateType": 101,
+                "subactions": [
+                    {
+                        "verb": "SetDescription",
+                        "description": "Document library to illustrate SharePoint site scripting"
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Text",
+                        "displayName": "Text Field",
+                        "isRequired": false,
+                        "addToDefaultView": true
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Number",
+                        "displayName": "Number Field",
+                        "addToDefaultView": true,
+                        "isRequired": true
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "User",
+                        "displayName": "User Field",
+                        "addToDefaultView": true,
+                        "isRequired": true
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Note",
+                        "displayName": "Note Field",
+                        "isRequired": false
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Boolean",
+                        "displayName": "Boolean Field",
+                        "isRequired": false
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "DateTime",
+                        "displayName": "Date Time Field",
+                        "isRequired": false
+                    },
+                    {
+                        "verb": "addSPField",
+                        "fieldType": "Text",
+                        "displayName": "Text A Field",
+                        "isRequired": false,
+                        "addToDefaultView": true
+                    },
+                    {
+                        "verb": "deleteSPField",
+                        "fieldType": "Text",
+                        "displayName": "Text A Field",
+                        "isRequired": false,
+                        "addToDefaultView": true
+                    }
+                ]
+            },
+            {
+                "verb": "addNavLink",
+                "url": "/Custom Library",
+                "displayName": "Custom Library",
+                "isWebRelative": true
+            },
+            {
+                "verb": "addNavLink",
+                "url": "/Lists/Custom List",
+                "displayName": "Custom List",
+                "isWebRelative": true
+            }
+
+        ],
+            "bindata": { },
+    "version": 1
+};

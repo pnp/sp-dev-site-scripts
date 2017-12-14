@@ -4,11 +4,11 @@ You can use Site Scripts to customize how SharePoint sites are being provisioned
 
 This is a open source repository to share different kind of Site Scripts between community. Check [**Samples**](./samples) folder for what's currently available. Have you build one which you can share? - **We do welcome contributions**.
 
-Image to be added
+![Pic of site design panel in the site](https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/images/progress-pane.png)
 
 You can find more details around the Site Script and Site Design capability from official SharePoint Dev documentation. 
 
-- [Title of the Document](#)
+- [https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-overview](https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-overview)
 
 # Contributing
 
