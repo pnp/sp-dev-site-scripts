@@ -1,0 +1,12 @@
+{
+    "$schema": "schema.json",
+    actions: [
+        {
+            verb: "setSiteExternalSharingCapability", 
+            capability: "ExistingExternalUserSharingOnly" /* sharing only with existing external users in your directory */
+        }
+    ]
+        "bindata": { },
+    "version": 1
+}
+

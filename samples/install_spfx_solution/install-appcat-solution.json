@@ -1,0 +1,27 @@
+{
+    "$schema": "schema.json",
+        "actions": [
+            {
+                "verb": "installSPFXSolution",
+                "id": "d40e4edc-a6da-4cd8-b82d-bba970976809"
+            }
+        ],
+            "bindata": { },
+    "version": 1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

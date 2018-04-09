@@ -1,0 +1,15 @@
+{
+    "$schema": "schema.json",
+        "actions": [
+            {
+                "verb": "setRegionalSettings",
+                "timeZone": 2, /* Greenwich Mean Time */
+                "locale": 1050, /* Croatia */
+                "sortOrder": 6, /* Croatian */
+                "hourFormat": "24"
+            }
+        ],
+            "bindata": { },
+    "version": 1
+}
+

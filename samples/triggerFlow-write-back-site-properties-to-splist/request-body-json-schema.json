@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "webUrl": {
+            "type": "string"
+        },
+        "webDescription": {
+            "type": "string"
+        },
+        "creatorName": {
+            "type": "string"
+        },
+        "creatorEmail": {
+            "type": "string"
+        },
+        "creationTimeUTC": {
+            "type": "string"
+        },
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "event": {
+                    "type": "string"
+                },
+                "product": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

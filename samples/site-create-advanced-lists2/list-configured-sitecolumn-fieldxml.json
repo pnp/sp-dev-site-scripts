@@ -1,0 +1,61 @@
+{
+    "$schema": "schema.json",
+    actions: [
+        {
+            "verb": "createSiteColumn",
+            "fieldType": "User",
+            "internalName": "siteColumnUser",
+            "displayName": "Project Owner", 
+            "isRequired": false,
+            "group": "Contoso Custom Fields",
+            "enforceUnique": false
+        },       
+        {
+            "verb": "createSPList",
+            "listName": "Contoso Project Tracker",
+            "templateType": 100,
+            "subactions": 
+            [
+                {
+                    "verb": "SetDescription",
+                    "description": "Custom list to illustrate SharePoint site scripting capabilities - spring 2018"
+                },
+                {
+                    "verb": "addSiteColumn",
+                    "internalName": "siteColumnUser"
+                },
+                {
+                    "verb": "addSPFieldXml",
+                    "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Project Category\" Required=\"FALSE\" Format=\"Dropdown\" StaticName=\"ProjectCategory\" Name=\"ProjectCategory\"><Default>Operations</Default><CHOICES><CHOICE>Operations</CHOICE><CHOICE>IT</CHOICE><CHOICE>Legal</CHOICE><CHOICE>Engineering</CHOICE></CHOICES></Field>"
+                },
+                {
+                    "verb": "addSPView",
+                    "name": "Contoso Projects by Category",
+                    "viewFields": 
+                    [
+                        "ID", 
+                        "Title",
+                        "siteColumnUser",
+                        "ProjectCategory"
+                    ],
+                    "query": "<OrderBy><FieldRef Name=\"ProjectCategory\" /><FieldRef Name=\"siteColumnUser\" Ascending=\"FALSE\" /></OrderBy>",
+                    "rowLimit": 100,
+                    "isPaged": true,
+                    "makeDefault": true
+                },
+                {
+                    "verb": "removeSPView",
+                    "name": "All Items"
+                }
+            ]
+        },
+        {
+            "verb": "addNavLink",
+            "url": "/Lists/Contoso Project Tracker",
+            "displayName": "Contoso Projects",
+            "isWebRelative": true
+        }        
+    ],
+    "bindata": { },
+    "version": 1
+}

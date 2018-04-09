@@ -1,0 +1,106 @@
+{
+    "$schema": "schema.json",
+    actions: [
+        {
+            "verb": "createSiteColumn",
+            "fieldType": "Text",
+            "internalName": "siteColumn1Text",
+            "displayName": "Project Status", 
+            "isRequired": false,
+            "group": "Contoso Custom",
+            "enforceUnique": true
+        },
+        {
+            "verb": "createSiteColumn",
+            "fieldType": "Number",
+            "internalName": "siteColumn2Number",
+            "displayName": "Effort in Days",
+            "isRequired": false
+        },
+        {
+            "verb": "createSiteColumn",
+            "fieldType": "Note",
+            "internalName": "siteColumn3Note",
+            "displayName": "Meeting Notes",
+            "isRequired": false
+        },
+        {
+            "verb": "createSiteColumn",
+            "fieldType": "User",
+            "internalName": "siteColumn4User",
+            "displayName": "Project Owner",
+            "isRequired": false
+        },
+        {
+            "verb": "createContentType",
+            "name": "Contoso Projects",
+            "description": "custom list content type",
+            "parentName": "Item",
+            "hidden": false,
+            "subactions":
+            [
+                {
+                    "verb": "addSiteColumn",
+                    "internalName": "siteColumn1Text"
+                },
+                {
+                    "verb": "addSiteColumn",
+                    "internalName": "siteColumn2Number"
+                },
+                {
+                    "verb": "addSiteColumn",
+                    "internalName": "siteColumn3Note"
+                }
+            ]
+        },
+        {
+            "verb": "createSPList",
+            "listName": "Documents",
+            "templateType": 101,
+            "subactions": 
+            [
+                {
+                    "verb": "SetDescription",
+                    "description": "Custom document library to illustrate SharePoint site scripting capabilities - spring 2018"
+                },
+                {
+                    "verb": "addContentType",
+                    "name": "Contoso Projects"
+                },
+                {
+                    "verb": "addSiteColumn",
+                    "internalName": "siteColumn4User",
+                    "addToDefaultView": true
+                },
+                {
+                    "verb": "addSPField",
+                    "fieldType": "DateTime",
+                    "displayName": "Delivery Date",
+                    "internalName": "spField1DateTime",
+                    "isRequired": true,
+                    "addToDefaultView": true
+                },
+                {
+                    "verb": "addSPView",
+                    "name": "Contoso Projects by Effort",
+                    "viewFields": 
+                    [
+                        "ID", 
+                        "Title",
+                        "siteColumn1Text",
+                        "siteColumn2Number",
+                        "siteColumn3Note",
+                        "siteColumn4User",
+                        "spField1DateTime"
+                    ],
+                    "query": "<OrderBy><FieldRef Name=\"Title\" /><FieldRef Name=\"siteColumn1Text\" Ascending=\"FALSE\" /></OrderBy><Where><Gt><FieldRef Name=\"siteColumn2Number\"/><Value Type=\"Number\">5</Value></Gt></Where>",
+                    "rowLimit": 100,
+                    "isPaged": true,
+                    "makeDefault": true
+                }
+            ]
+        }
+    ],
+    "bindata": { },
+    "version": 1
+}
