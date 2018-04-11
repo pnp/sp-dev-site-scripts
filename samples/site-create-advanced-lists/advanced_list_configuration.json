@@ -60,7 +60,7 @@
             "subactions": 
             [
                 {
-                    "verb": "SetDescription",
+                    "verb": "setDescription",
                     "description": "Custom document library to illustrate SharePoint site scripting capabilities - spring 2018"
                 },
                 {
