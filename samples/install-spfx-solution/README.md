@@ -4,7 +4,7 @@
 
 The `installSPFXSolution` allows you to install a solution you have deployed to the tenant app catalog and enabled using the new ALM APIs.
 
-> More details on ALM APIs are available from [official harePoint Development documentation](https://docs.microsoft.com/en-us/sharepoint/dev/apis/alm-api-for-spfx-add-ins).
+> More details on ALM APIs are available from [official SharePoint Development documentation](https://docs.microsoft.com/en-us/sharepoint/dev/apis/alm-api-for-spfx-add-ins).
 
 -  For this example you need to first upload the solution to the app catalog and enable it.
 
