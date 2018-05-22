@@ -3,6 +3,14 @@
 ## Summary
 
 We have amended the `triggerFlow` site action to pass additional site information. These properties can be associated to variables in the JSON request body of a HTTP request Flow action and then used as dynamic content in other Flow actions like email and list objects.
+These properties are automatically sent from the site provisioning engine. In other words: you don't have to explicitly write these properties in the sitescript-file. 
+
+The properties that you can use are the following:
+- webUrl
+- creatorName
+- creatorEmail
+- webDescription
+- createdTimeUTC
 
 In this example you can use the included JSON in your HTTP Request action request body and then insert a new step like create SharePoint list item. First create the SharePoint list so you can reference it in the create item Flow action. Your list should include fields for each of the triggerFlow properties you'd like to capture. For this example you need to create a list to capture all sites created with this site design and script using a triggerFlow):
 
