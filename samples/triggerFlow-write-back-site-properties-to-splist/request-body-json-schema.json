@@ -13,7 +13,7 @@
         "creatorEmail": {
             "type": "string"
         },
-        "creationTimeUTC": {
+        "createdTimeUTC": {
             "type": "string"
         },
         "parameters": {
