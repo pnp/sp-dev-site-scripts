@@ -61,13 +61,15 @@ This solution is based on the documented process for [Calling the PnP Provisioni
 * In the section, "Finish the Azure Function", add the Azure Function code from this repo instead of the sample in the article. Make sure you set up the SPO_AppId and SPO_AppSecret application settings as explained in Step 4.
 * You can skip the section "Create the Site Design" for now, as this is handled by the Install-SampleSiteDesign.ps1 PowerShell script in this repo
 
-## Install the SharePoint THeme
+## Install the SharePoint Theme
 
 This repo includes a PowerShell script,Install-SampleTheme.ps1, to create a custom site theme. You may want to make a new theme for your site, or you can stick with the Funko colors (which are close but not quite the same as the SharePoint colors). 
 
 For example, if you want to call your theme DeptThemeSample, run this:
 
-    .\Install-SampleTheme.ps1 -Url https://<tenant>-admin.sharepoint.com -ThemeName "DeptThemeSample"
+    .\Install-SampleTheme.ps1 `
+      -Url https://<tenant>-admin.sharepoint.com `
+      -ThemeName "DeptThemeSample"
 
 ## Install the Site Design and Site Script
 
@@ -77,7 +79,7 @@ For example, you might call
 
     .\Install-SampleSiteDesign.ps1 `
       -Url https://<tenant>-admin.sharepoint.com `
-      -LogoUrl "https://www.funko.com/static/media/funko-logo-white.09b7bdff.jpg" `
+      -LogoUrl "https://www.somewhere.com/companyLogo.jpg" `
       -ThemeName "DeptThemeSample" `
       -FlowTriggerUrl "https://(URL from step 4 of the Site Design PnP Provisioning article)"
 
