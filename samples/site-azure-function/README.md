@@ -81,7 +81,7 @@ For example, you might call
       -Url https://<tenant>-admin.sharepoint.com `
       -LogoUrl "https://www.somewhere.com/companyLogo.jpg" `
       -ThemeName "DeptThemeSample" `
-      -FlowTriggerUrl "https://(URL from step 4 of the Site Design PnP Provisioning article)"
+      -FlowTriggerUrl "https://(URL from step 14 of the Site Design PnP Provisioning article)"
 
 Now you should be able to create a Communications Site from SharePoint Home and the site design should be displayed. The site script triggers the Flow, which adds to the Azure Queue, which calls the Azure Function to populate the site home page.
 
