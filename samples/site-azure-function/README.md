@@ -85,4 +85,4 @@ For example, you might call
 
 Now you should be able to create a Communications Site from SharePoint Home and the site design should be displayed. The site script triggers the Flow, which adds to the Azure Queue, which calls the Azure Function to populate the site home page.
 
-<img src="https://telemetry.sharepointpnp.com/sp-dev-site-scripts/samples/readme-template" />
+<img src="https://telemetry.sharepointpnp.com/sp-dev-site-scripts/samples/site-azure-function" />
