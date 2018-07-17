@@ -2,7 +2,7 @@
 
 ## Summary
 
-The `installSPFXSolution` allows you to install a solution you have deployed to the tenant app catalog and enabled using the new ALM APIs.
+The `installSolution` allows you to install a solution you have deployed to the tenant app catalog and enabled using the new ALM APIs.
 
 > More details on ALM APIs are available from [official SharePoint Development documentation](https://docs.microsoft.com/en-us/sharepoint/dev/apis/alm-api-for-spfx-add-ins).
 
@@ -37,6 +37,7 @@ install-appcat-solution | SharePoint Team
 Version|Date|Comments
 -------|----|--------
 1.0|April 10, 2018|Initial release
+1.1|July 16, 2018|Action name has been changed from installSPFXSolution to installSolution
 
 ## Disclaimer
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**

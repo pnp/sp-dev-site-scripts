@@ -2,7 +2,7 @@
     "$schema": "schema.json",
         "actions": [
             {
-                "verb": "installSPFXSolution",
+                "verb": "installSolution",
                 "id": "d40e4edc-a6da-4cd8-b82d-bba970976809"
             }
         ],
