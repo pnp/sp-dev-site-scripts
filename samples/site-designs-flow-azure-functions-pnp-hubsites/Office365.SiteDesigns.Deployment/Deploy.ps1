@@ -1,6 +1,5 @@
 ###Authenticaiton###
-$userCredential = Get-StoredCredential -Target "vrdmn.sharepoint.com"
-Connect-SPOService -Url "https://vrdmn-admin.sharepoint.com" -Credential $userCredential
+Connect-SPOService -Url "https://tenant-admin.sharepoint.com"
 
 #Cleanup any existing site scripts and site designs
 #Get-SPOSiteDesign | Remove-SPOSiteDesign
@@ -31,13 +30,13 @@ $siteScriptSharing = Add-SPOSiteScript -Title "CnC External Sharing" -Descriptio
 
 ###Site Designs###
 #Create a basic site design only using the lists and theme site script.
-Add-SPOSiteDesign -Title "CnC Office 365 Group site" -WebTemplate "64" -IsDefault -SiteScripts $siteScriptTheme.ID, $siteScriptList.ID, $siteScriptSharing.ID -Description "CnC custom site connected to Office 365 Group" -PreviewImageUrl "https://vrdmn.sharepoint.com/SiteAssets/cncsitepreview.png" -PreviewImageAltText "CnC custom site logo"
+Add-SPOSiteDesign -Title "CnC Office 365 Group site" -WebTemplate "64" -IsDefault -SiteScripts $siteScriptTheme.ID, $siteScriptList.ID, $siteScriptSharing.ID -Description "CnC custom site connected to Office 365 Group" -PreviewImageUrl "https://tenant.sharepoint.com/SiteAssets/cncsitepreview.png" -PreviewImageAltText "CnC custom site logo"
 
-Add-SPOSiteDesign -Title "CnC Basic Communication site" -WebTemplate "68" -SiteScripts $siteScriptTheme.ID, $siteScriptList.ID, $siteScriptSPFx.ID, $siteScriptSharing.ID -Description "CnC basic communication site" -PreviewImageUrl "https://vrdmn.sharepoint.com/SiteAssets/cncsitepreview.png"
+Add-SPOSiteDesign -Title "CnC Basic Communication site" -WebTemplate "68" -SiteScripts $siteScriptTheme.ID, $siteScriptList.ID, $siteScriptSPFx.ID, $siteScriptSharing.ID -Description "CnC basic communication site" -PreviewImageUrl "https://tenant.sharepoint.com/SiteAssets/cncsitepreview.png"
 
 #Create an advanced site design by using the theme, lists and flow site scripts
-Add-SPOSiteDesign -Title "CnC Advanced Communication site" -WebTemplate "68" -SiteScripts $siteScriptTheme.ID, $siteScriptList.ID, $siteScriptTriggerFlow.ID -Description "CnC advanced communication site" -PreviewImageUrl "https://vrdmn.sharepoint.com/SiteAssets/cncsitepreview.png"
+Add-SPOSiteDesign -Title "CnC Advanced Communication site" -WebTemplate "68" -SiteScripts $siteScriptTheme.ID, $siteScriptList.ID, $siteScriptTriggerFlow.ID -Description "CnC advanced communication site" -PreviewImageUrl "https://tenant.sharepoint.com/SiteAssets/cncsitepreview.png"
 
-Add-SPOSiteDesign -Title "CnC Department site" -WebTemplate "68" -SiteScripts $siteScriptJoinToHub.ID -Description "Department site will be joined to Hub" -PreviewImageUrl "https://vrdmn.sharepoint.com/SiteAssets/cncsitepreview.png"
+Add-SPOSiteDesign -Title "CnC Department site" -WebTemplate "68" -SiteScripts $siteScriptJoinToHub.ID -Description "Department site will be joined to Hub" -PreviewImageUrl "https://tenant.sharepoint.com/SiteAssets/cncsitepreview.png"
 
 

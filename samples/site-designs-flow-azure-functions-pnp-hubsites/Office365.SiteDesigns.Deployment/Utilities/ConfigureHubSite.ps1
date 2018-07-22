@@ -1,1 +1,1 @@
-Register-SPOHubSite https://vrdmn.sharepoint.com/sites/DepartmentHubSite
+Register-SPOHubSite https://tenant.sharepoint.com/sites/DepartmentHubSite
