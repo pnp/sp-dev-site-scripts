@@ -1,0 +1,1 @@
+Register-SPOHubSite https://vrdmn.sharepoint.com/sites/DepartmentHubSite

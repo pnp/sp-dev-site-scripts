@@ -1,0 +1,18 @@
+{
+  "$schema": "schema.json",
+  "actions": [
+    {
+      "verb": "createSPList",
+      "listName": "CnC Documents",
+      "templateType": 101,
+      "subactions": [
+        {
+          "verb": "SetDescription",
+          "description": "Custom Document Library created with Site Designs"
+        }
+      ]
+    }
+  ],
+  "bindata": {},
+  "version": 1
+}

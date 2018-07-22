@@ -1,0 +1,18 @@
+{
+  "$schema": "schema.json",
+      "actions": [
+        {
+          "verb": "triggerFlow",
+          "url": "https://prod-20.westeurope.logic.azure.com:443/workflows/b101381036014a63b7b8b3d7e4e905e7/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=QABDIEPzdWfc9onLt1QvBbhsdyXUMP6WhRecNGOfnNw",
+          "name": "Customise Site with Microsoft PnP",
+          "parameters": {
+            "event": "Microsoft Event",
+            "product": "SharePoint",
+            "siteType": "CnC Advanced Communication site",
+            "customMessage": "Item added from Flow!"
+          }
+        }
+      ],
+          "bindata": { },
+  "version": 1
+ }

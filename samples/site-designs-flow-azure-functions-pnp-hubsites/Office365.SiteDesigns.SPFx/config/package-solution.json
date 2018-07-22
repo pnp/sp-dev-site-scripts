@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "office-365-site-designs-sp-fx-client-side-solution",
+    "id": "6f40311e-6d10-4020-a28b-644a946b7c5f",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": false
+  },
+  "paths": {
+    "zippedPackage": "solution/office-365-site-designs-sp-fx.sppkg"
+  }
+}
