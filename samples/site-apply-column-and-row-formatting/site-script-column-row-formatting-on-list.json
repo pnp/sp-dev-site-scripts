@@ -1,0 +1,201 @@
+{
+  "actions": [
+
+    {
+        "verb": "createSiteColumnXml",
+        "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Project Status\" Required=\"FALSE\" Format=\"Dropdown\" StaticName=\"ProjectStatus\" Name=\"ProjectStatus\"><Default>In Progress</Default><CHOICES><CHOICE>In Progress</CHOICE><CHOICE>In Review</CHOICE><CHOICE>Done</CHOICE><CHOICE>Has Issues</CHOICE></CHOICES></Field>"
+    },        
+    {
+        "verb": "createSiteColumnXml",
+        "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Project Category\" Required=\"FALSE\" Format=\"Dropdown\" StaticName=\"ProjectCategory\" Name=\"ProjectCategory\"><Default>Operations</Default><CHOICES><CHOICE>Operations</CHOICE><CHOICE>IT</CHOICE><CHOICE>Legal</CHOICE><CHOICE>Engineering</CHOICE><CHOICE>HR</CHOICE><CHOICE>Services</CHOICE><CHOICE>Consulting</CHOICE></CHOICES></Field>"
+    },
+    {
+      "verb": "createContentType",
+      "name": "ContosoProjects",
+      "id": "0x0100B609FEFDEFAA484299C6DE254182E666",
+      "description": "custom list content type",
+      "parentId": "0x01",
+      "hidden": false,
+      "subactions": [
+        {
+          "verb": "addSiteColumn",
+          "internalName": "ProjectStatus"
+        },
+        {
+          "verb": "addSiteColumn",
+          "internalName": "ProjectCategory"
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "Project Tracker",
+      "templateType": 100,
+      "subactions": [
+        {
+          "verb": "addContentType",
+          "name": "ContosoProjects"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field DisplayName=\"Project Progress\" Percentage=\"FALSE\" Title=\"Project Progress\" Type=\"Number\" ID=\"{1a2f5cd6-3734-4afa-927d-bd11d38e78a4}\" StaticName=\"ProjectProgress\" Name=\"ProjectProgress\" />"
+        },
+        {
+            "verb": "setSPFieldCustomFormatter",
+            "fieldDisplayName": "Project Status",
+            "formatterJSON": {
+                "$schema": "http://columnformatting.sharepointpnp.com/columnFormattingSchema.json",
+                "elmType": "div",
+                "attributes": {
+                    "class": {
+                    "operator": "?",
+                    "operands": [
+                        {
+                        "operator": "==",
+                        "operands": [
+                            "@currentField",
+                            "Done"
+                        ]
+                        },
+                        "sp-field-severity--good",
+                        {
+                        "operator": "?",
+                        "operands": [
+                            {
+                            "operator": "==",
+                            "operands": [
+                                "@currentField",
+                                "In progress"
+                            ]
+                            },
+                            "sp-field-severity--low",
+                            {
+                            "operator": "?",
+                            "operands": [
+                                {
+                                "operator": "==",
+                                "operands": [
+                                    "@currentField",
+                                    "In review"
+                                ]
+                                },
+                                "sp-field-severity--warning",
+                                {
+                                "operator": "?",
+                                "operands": [
+                                    {
+                                    "operator": "==",
+                                    "operands": [
+                                        "@currentField",
+                                        "Has issues"
+                                    ]
+                                    },
+                                    "sp-field-severity--severeWarning",
+                                    "sp-field-severity--blocked"
+                                ]
+                                }
+                            ]
+                            }
+                        ]
+                        }
+                    ]
+                    }
+                },
+                "children": [
+                    {
+                    "elmType": "span",
+                    "style": {
+                        "display": "inline-block",
+                        "padding-left": "4px"
+                    },
+                    "attributes": {
+                        "iconName": {
+                        "operator": "?",
+                        "operands": [
+                            {
+                            "operator": "==",
+                            "operands": [
+                                "@currentField",
+                                "Done"
+                            ]
+                            },
+                            "CheckMark",
+                            {
+                            "operator": "?",
+                            "operands": [
+                                {
+                                "operator": "==",
+                                "operands": [
+                                    "@currentField",
+                                    "In progress"
+                                ]
+                                },
+                                "Forward",
+                                {
+                                "operator": "?",
+                                "operands": [
+                                    {
+                                    "operator": "==",
+                                    "operands": [
+                                        "@currentField",
+                                        "In review"
+                                    ]
+                                    },
+                                    "Error",
+                                    {
+                                    "operator": "?",
+                                    "operands": [
+                                        {
+                                        "operator": "==",
+                                        "operands": [
+                                            "@currentField",
+                                            "Has issues"
+                                        ]
+                                        },
+                                        "Warning",
+                                        "ErrorBadge"
+                                    ]
+                                    }
+                                ]
+                                }
+                            ]
+                            }
+                        ]
+                        }
+                    }
+                    },
+                    {
+                    "elmType": "span",
+                    "txtContent": "@currentField",
+                    "style": {
+                        "padding-left": "4px"
+                    }
+                    }
+                ]
+            }
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Items",
+          "viewFields": [
+            "LinkTitle",
+            "ProjectProgress",
+            "ProjectStatus",
+            "ProjectCategory"
+          ],
+          "query": "",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true,
+          "formatterJSON": {"additionalRowClass": "=if([$ProjectCategory] == 'Legal', 'sp-field-severity--blocked', '' )"}
+        }
+      ]
+    },
+    {
+      "verb": "addNavLink",
+      "url": "Lists/Project Tracker/AllItems.aspx",
+      "displayName": "My Projects",
+      "isWebRelative": true
+    }
+  ]
+}

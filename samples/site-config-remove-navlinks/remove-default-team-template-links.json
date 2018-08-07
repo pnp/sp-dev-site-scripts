@@ -1,0 +1,44 @@
+{
+    actions: [
+
+        {
+            "verb": "removeNavLink",
+            "displayName": "Home",
+            "isWebRelative": true
+        },
+        {
+            "verb": "removeNavLink",
+            "displayName": "Pages",
+            "isWebRelative": true
+        },
+        {
+            "verb": "removeNavLink",
+            "displayName": "Conversations",
+            "isWebRelative": true
+        },
+                {
+            "verb": "removeNavLink",
+            "displayName": "Documents",
+            "isWebRelative": true
+        },
+                {
+            "verb": "removeNavLink",
+            "displayName": "Notebook",
+            "isWebRelative": true
+        },
+        {
+            "verb": "removeNavLink",
+            "url": "/_layouts/15/groupstatus.aspx?Target=TEAM",
+            "displayName": "Teams",
+            "isWebRelative": true
+        },
+        {
+            "verb": "removeNavLink",
+            "url": "/_layouts/15/viewlsts.aspx",
+            "displayName": "Site contents",
+            "isWebRelative": true
+        }
+        /* cannot remove recycle bin */
+   
+    ]
+}

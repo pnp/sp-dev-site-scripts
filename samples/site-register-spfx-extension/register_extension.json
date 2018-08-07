@@ -1,0 +1,19 @@
+{
+    "$schema": "schema.json",
+    "actions": [
+        {
+            "verb": "installSolution",
+            "id": "c59e2c4a-e7ef-4a88-ae8f-c770abfc150a",
+            "name": "Application Customizer for Page Header Footer"
+        },
+        {
+            "verb": "associateExtension",
+            "title": "SPFXApplicationCustomizer Example",
+            "location": "ClientSideExtension.ApplicationCustomizer",
+            "clientSideComponentId": "40d64749-a6e5-4691-b440-1e32fb6bfea5",
+            "scope": "Web"
+        }
+    ],
+    "bindata": { },
+    "version": 1
+}

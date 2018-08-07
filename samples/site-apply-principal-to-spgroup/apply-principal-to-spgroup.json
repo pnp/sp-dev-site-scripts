@@ -1,0 +1,32 @@
+{
+    "actions": [
+
+        {
+            "verb": "addNavLink", /* optional - added to make it easier to access the site group settings */
+            "url": "/_layouts/15/user.aspx",
+            "displayName": "user groups",
+            "isWebRelative": true
+        },
+        {
+            "verb": "addPrincipalToSPGroup",
+            "principal": "myITTeam", /* sg */
+            "group": "Owners"
+        },
+        {
+            "verb": "addPrincipalToSPGroup",
+            "principal": "myFavoritePeople", /* mail-enabled sg */
+            "group": "Members"
+        },
+        {
+            "verb": "addPrincipalToSPGroup",
+            "principal": "SeanTeam@contoso.onmicrosoft.com", /* o365 group */
+            "group": "Visitors"
+        },
+        {
+            "verb": "addPrincipalToSPGroup",
+            "principal": "emilyb@contoso.onmicrosoft.com", /* user */
+            "group": "Owners"
+        }       
+    ]
+}
+

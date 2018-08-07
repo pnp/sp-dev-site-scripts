@@ -1,0 +1,144 @@
+{
+  "actions": [
+
+    {
+        "verb": "createSiteColumnXml",
+        "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Project Status\" Required=\"FALSE\" Format=\"Dropdown\" StaticName=\"ProjectStatus\" Name=\"ProjectStatus\"><Default>In Progress</Default><CHOICES><CHOICE>In Progress</CHOICE><CHOICE>In Review</CHOICE><CHOICE>Done</CHOICE><CHOICE>Has Issues</CHOICE></CHOICES></Field>"
+    },        
+    {
+        "verb": "createSiteColumnXml",
+        "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Project Category\" Required=\"FALSE\" Format=\"Dropdown\" StaticName=\"ProjectCategory\" Name=\"ProjectCategory\"><Default>Operations</Default><CHOICES><CHOICE>Operations</CHOICE><CHOICE>IT</CHOICE><CHOICE>Legal</CHOICE><CHOICE>Engineering</CHOICE><CHOICE>HR</CHOICE><CHOICE>Services</CHOICE><CHOICE>Consulting</CHOICE></CHOICES></Field>"
+    },
+    {
+      "verb": "createContentType",
+      "name": "ContosoProjects",
+      "id": "0x0100B609FEFDEFAA484299C6DE254182E666",
+      "description": "custom list content type",
+      "parentId": "0x01",
+      "hidden": false,
+      "subactions": [
+        {
+          "verb": "addSiteColumn",
+          "internalName": "ProjectStatus"
+        },
+        {
+          "verb": "addSiteColumn",
+          "internalName": "ProjectCategory"
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "Contoso Project List",
+      "templateType": 100,
+      "subactions": [
+        {
+          "verb": "addContentType",
+          "name": "ContosoProjects"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field DisplayName=\"Text Field 1\" Type=\"Text\" Required=\"FALSE\" ID=\"{72fc80f5-6459-414e-b507-fc5e7a1f9f19}\" StaticName=\"MyFieldA1\" Name=\"MyFieldA1\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field DisplayName=\"Text Field 2\" Type=\"Text\" Required=\"FALSE\" ID=\"{9d30bb7b-bc25-46dc-b044-fd71b11b8324}\" StaticName=\"MyFieldA2\" Name=\"MyFieldA2\" />"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Items",
+          "viewFields": [
+            "LinkTitle",
+            "MyFieldA1"
+          ],
+          "query": "",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "Project Tracker List",
+      "templateType": 100,
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"Number\" DisplayName=\"MyNumber\" CustomFormatter=\"{&#xD;&#xA;    &quot;$schema&quot;: &quot; https://developer.microsoft.com/en-us/json-schemas/sp/column-formatting.schema.json&quot;,&#xD;&#xA;    &quot;debugMode&quot;: true,&#xD;&#xA;    &quot;elmType&quot;: &quot;div&quot;,&#xD;&#xA;    &quot;attributes&quot;: {&#xD;&#xA;       &quot;class&quot;: {&#xD;&#xA;          &quot;operator&quot;: &quot;?&quot;,&#xD;&#xA;          &quot;operands&quot;: [&#xD;&#xA;             {&#xD;&#xA;                &quot;operator&quot;: &quot;&lt;=&quot;,&#xD;&#xA;                &quot;operands&quot;: [&#xD;&#xA;                   &quot;@currentField&quot;,&#xD;&#xA;                   70&#xD;&#xA;                ]&#xD;&#xA;             },&#xD;&#xA;             &quot;sp-field-severity--warning&quot;,&#xD;&#xA;             &quot;&quot;&#xD;&#xA;          ]&#xD;&#xA;       }&#xD;&#xA;    },&#xD;&#xA;    &quot;children&quot;: [&#xD;&#xA;        {&#xD;&#xA;            &quot;elmType&quot;: &quot;span&quot;,&#xD;&#xA;            &quot;style&quot;: {&#xD;&#xA;                &quot;display&quot;: &quot;inline-block&quot;,&#xD;&#xA;                &quot;padding&quot;: &quot;0 4px&quot;&#xD;&#xA;            },&#xD;&#xA;            &quot;attributes&quot;: {&#xD;&#xA;                &quot;iconName&quot;: {&#xD;&#xA;                    &quot;operator&quot;: &quot;?&quot;,&#xD;&#xA;                    &quot;operands&quot;: [&#xD;&#xA;                        {&#xD;&#xA;                            &quot;operator&quot;: &quot;&lt;=&quot;,&#xD;&#xA;                            &quot;operands&quot;: [&#xD;&#xA;                                &quot;@currentField&quot;,                  &#xD;&#xA;                                70&#xD;&#xA;                            ]&#xD;&#xA;                        },&#xD;&#xA;                        &quot;Error&quot;,&#xD;&#xA;                        &quot;&quot;&#xD;&#xA;                    ]&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;        },&#xD;&#xA;        {&#xD;&#xA;            &quot;elmType&quot;: &quot;span&quot;,&#xD;&#xA;            &quot;txtContent&quot;: &quot;@currentField&quot;&#xD;&#xA;        }&#xD;&#xA;    ]&#xD;&#xA;}&#xD;&#xA;\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" ID=\"{663ae4a2-4bbb-476e-9e8c-8a8103938f85}\" StaticName=\"MyNumber\" Name=\"MyNumber\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Dropdown Choice Field\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"Dropdown\" FillInChoice=\"FALSE\" ID=\"{84c77534-a244-40f2-a24c-158f77081eba}\" StaticName=\"MyChoice1\" Name=\"MyChoice1\"><Default>Enter Choice #1</Default><CHOICES><CHOICE>Enter Choice #1</CHOICE><CHOICE>Enter Choice #2</CHOICE><CHOICE>Enter Choice #3</CHOICE></CHOICES></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Radio Choice Field\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"RadioButtons\" FillInChoice=\"FALSE\" ID=\"{80269de2-8bad-4a13-ac1c-3b13dcde07fa}\" StaticName=\"MyChoice2\" Name=\"MyChoice2\"><Default>Enter Choice #1</Default><CHOICES><CHOICE>Enter Choice #1</CHOICE><CHOICE>Enter Choice #2</CHOICE><CHOICE>Enter Choice #3</CHOICE></CHOICES></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"MultiChoice\" DisplayName=\"Fillin Choice Field\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" FillInChoice=\"FALSE\" ID=\"{15884d0f-01c3-4ab2-a92a-3cfa734edba3}\" StaticName=\"MyChoice3\" Name=\"MyChoice3\"><Default>Enter Choice #1</Default><CHOICES><CHOICE>Enter Choice #1</CHOICE><CHOICE>Enter Choice #2</CHOICE><CHOICE>Enter Choice #3</CHOICE></CHOICES></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"Currency\" DisplayName=\"Currency Field\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Min=\"0\" Max=\"999999\" Decimals=\"2\" LCID=\"1033\" ID=\"{b436e7bb-46ca-41b3-b5b0-28b7292a153b}\" StaticName=\"MyCurrency\" Name=\"MyCurrency\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"DateTime\" DisplayName=\"DateTime Field\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"DateOnly\" FriendlyDisplayFormat=\"Disabled\" ID=\"{2f5a2bbb-828f-479f-bdc3-22c6fbd58146}\" StaticName=\"MyDateTime\" Name=\"MyDateTime\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"Boolean\" DisplayName=\"CheckBox Field\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" ID=\"{60b25d15-f932-498a-9427-cedde73a087f}\" StaticName=\"MyCheckBox\" Name=\"MyCheckBox\"><Default>1</Default></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"URL\" DisplayName=\"LinkURL Field\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"Hyperlink\" ID=\"{21db97e1-c1e0-4d49-8e33-f7f33fdd649c}\" StaticName=\"MyLinkURL\" Name=\"MyLinkURL\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"URL\" DisplayName=\"LinkPicture Field\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"Image\" ID=\"{c08a5398-60c8-4b71-b01c-1e067f5b9509}\" StaticName=\"MyLinkPicture\" Name=\"MyLinkPicture\" />"
+        },
+        {
+          "verb": "addSPLookupFieldXml",
+          "schemaXml": "<Field Type=\"Lookup\" DisplayName=\"Lookup Field 1\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" ShowField=\"Title\" UnlimitedLengthInDocumentLibrary=\"FALSE\" RelationshipDeleteBehavior=\"None\" ID=\"{101f1f89-d667-4c7f-9ebc-76cb5831d0a2}\" StaticName=\"Lookup\" Name=\"Lookup\" />",
+          "targetListName": "Contoso Project List"
+        },
+        {
+          "verb": "addSPLookupFieldXml",
+          "schemaXml": "<Field Type=\"Lookup\" DisplayName=\"Lookup Field 2\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" ShowField=\"ProjectStatus\" UnlimitedLengthInDocumentLibrary=\"FALSE\" RelationshipDeleteBehavior=\"None\" ID=\"{c47fa195-12b5-4f22-9827-a8d18cba9061}\" StaticName=\"MyLookup1\" Name=\"MyLookup1\" />",
+          "targetListName": "Contoso Project List"
+        },
+        {
+          "verb": "addSPLookupFieldXml",
+          "schemaXml": "<Field Type=\"LookupMulti\" DisplayName=\"MultiLookup Field 3\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" ShowField=\"ProjectCategory\" Mult=\"TRUE\" Sortable=\"FALSE\" UnlimitedLengthInDocumentLibrary=\"FALSE\" RelationshipDeleteBehavior=\"None\" ID=\"{a52a0f21-9f49-45b4-80e7-bb78d6be3239}\" StaticName=\"MyLookup2\" Name=\"MyLookup2\" />",
+          "targetListName": "Contoso Project List"
+        },
+
+        {
+          "verb": "addSPView",
+          "name": "All Items",
+          "viewFields": [
+            "LinkTitle",
+            "MyNumber",
+            "MyChoice1",
+            "MyChoice2",
+            "MyChoice3",
+            "MyCurrency",
+            "MyDateTime",
+            "MyCheckBox",
+            "MyLinkURL",
+            "MyLinkPicture",
+            "Lookup",
+            "MyLookup1",
+            "MyLookup2"
+          ],
+          "query": "",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true
+        }
+      ]
+    }
+  ]
+}
