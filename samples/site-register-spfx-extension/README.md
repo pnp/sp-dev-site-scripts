@@ -1,4 +1,4 @@
-# Create lookup fields with field xml
+# Associate SharePoint Framework extension to a site
 
 ## Summary
 
