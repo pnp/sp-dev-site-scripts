@@ -1,0 +1,1 @@
+Register-SPOHubSite https://tenant.sharepoint.com/sites/DepartmentHubSite

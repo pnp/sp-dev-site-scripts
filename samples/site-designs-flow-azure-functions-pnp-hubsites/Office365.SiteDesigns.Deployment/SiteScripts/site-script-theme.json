@@ -1,0 +1,11 @@
+{
+  "$schema": "schema.json",
+  "actions": [
+    {
+      "verb": "applyTheme",
+      "themeName": "Deep Purple"
+    }
+  ],
+  "bindata": {},
+  "version": 1
+}

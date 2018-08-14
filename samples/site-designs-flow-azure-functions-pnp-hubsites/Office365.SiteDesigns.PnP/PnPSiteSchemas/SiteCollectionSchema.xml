@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2018/01/ProvisioningSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2018-01.xsd" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.22.1801.0, Culture=neutral, PublicKeyToken=null" />
+  <pnp:Templates ID="CONTAINER-CNCPROVISIONING">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-CNCPROVISIONING" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:RegionalSettings AdjustHijriDays="0" AlternateCalendarType="None" CalendarType="Gregorian" Collation="25" FirstDayOfWeek="Monday" FirstWeekOfYear="0" LocaleId="2057" ShowWeeks="false" Time24="false" TimeZone="2" WorkDayEndHour="5:00PM" WorkDays="62" WorkDayStartHour="8:00AM" />
+      <pnp:ClientSidePages>
+        <pnp:ClientSidePage PageName="Welcome" Layout="Home" Publish="true" EnableComments="false">
+          <pnp:Sections>
+            <pnp:Section Order="1" Type="OneColumn">
+              <pnp:Controls>
+                <pnp:CanvasControl WebPartType="Text" Order="1" Column="1">
+                  <pnp:CanvasControlProperties>
+                    <pnp:CanvasControlProperty Key="Text" Value="Welcome to site customised by Site Designs + PnP!" />
+                  </pnp:CanvasControlProperties>
+                </pnp:CanvasControl>
+              </pnp:Controls>
+            </pnp:Section>
+            <pnp:Section Order="2" Type="TwoColumn">
+              <pnp:Controls>
+                <pnp:CanvasControl WebPartType="NewsFeed" Order="1" Column="1">
+                </pnp:CanvasControl>
+                <pnp:CanvasControl WebPartType="QuickLinks"  Order="2" Column="2">
+                </pnp:CanvasControl>
+              </pnp:Controls>
+            </pnp:Section>
+            <pnp:Section Order="3" Type="OneColumn">
+              <pnp:Controls>
+                <pnp:CanvasControl WebPartType="SiteActivity" Order="1" Column="1">
+                </pnp:CanvasControl>
+              </pnp:Controls>
+            </pnp:Section>
+          </pnp:Sections>
+        </pnp:ClientSidePage>
+      </pnp:ClientSidePages>
+      <pnp:ContentTypes>
+        <pnp:ContentType ID="0x0101004866F2D3716D4D1B96AA865DA8488484" Name="Private Document" Description="Content type for Private documents" Group="Content and Code Content Types">
+        </pnp:ContentType>
+      </pnp:ContentTypes>
+      <pnp:Lists>
+        <pnp:ListInstance Title="Private Documents" Url="PrivateDocuments" TemplateType="101" RemoveExistingContentTypes="true">
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroup}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedmembergroup}" RoleDefinition="Contribute" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+          <pnp:ContentTypeBindings>
+            <!--Private Document-->
+            <pnp:ContentTypeBinding ContentTypeID="0x0101004866F2D3716D4D1B96AA865DA8488484" Default="true"/>
+          </pnp:ContentTypeBindings>
+        </pnp:ListInstance>
+      </pnp:Lists>
+      <pnp:WebSettings WelcomePage="SitePages/Welcome.aspx"/>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

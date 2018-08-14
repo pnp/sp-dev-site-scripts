@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}
