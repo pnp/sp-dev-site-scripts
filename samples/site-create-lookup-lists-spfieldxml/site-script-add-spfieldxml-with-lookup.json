@@ -1,6 +1,5 @@
 {
   "actions": [
-
     {
         "verb": "createSiteColumnXml",
         "schemaXml": "<Field Type=\"Choice\" DisplayName=\"Project Status\" Required=\"FALSE\" Format=\"Dropdown\" StaticName=\"ProjectStatus\" Name=\"ProjectStatus\"><Default>In Progress</Default><CHOICES><CHOICE>In Progress</CHOICE><CHOICE>In Review</CHOICE><CHOICE>Done</CHOICE><CHOICE>Has Issues</CHOICE></CHOICES></Field>"
@@ -114,7 +113,6 @@
           "schemaXml": "<Field Type=\"LookupMulti\" DisplayName=\"MultiLookup Field 3\" Required=\"FALSE\" EnforceUniqueValues=\"FALSE\" ShowField=\"ProjectCategory\" Mult=\"TRUE\" Sortable=\"FALSE\" UnlimitedLengthInDocumentLibrary=\"FALSE\" RelationshipDeleteBehavior=\"None\" ID=\"{a52a0f21-9f49-45b4-80e7-bb78d6be3239}\" StaticName=\"MyLookup2\" Name=\"MyLookup2\" />",
           "targetListName": "Contoso Project List"
         },
-
         {
           "verb": "addSPView",
           "name": "All Items",

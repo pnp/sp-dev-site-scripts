@@ -3,7 +3,7 @@
         "actions": [
             {
                 "verb": "applyTheme",
-                themeName: "My Company Theme"
+                "themeName": "My Company Theme"
             }
         ],
             "bindata": { },

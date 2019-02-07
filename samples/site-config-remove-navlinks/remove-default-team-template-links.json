@@ -1,6 +1,5 @@
 {
-    actions: [
-
+    "actions": [
         {
             "verb": "removeNavLink",
             "displayName": "Home",
@@ -39,6 +38,5 @@
             "isWebRelative": true
         }
         /* cannot remove recycle bin */
-   
     ]
 }
