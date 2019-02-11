@@ -4,9 +4,9 @@
         {
             "verb": "joinHubSite",
             "hubSiteId": "d8ab01e9-1634-44dd-91fe-1e6ff8385c34",
-	    "name": "Contoso Operations Center"
+	        "name": "Contoso Operations Center"
         }
         ],
-            "bindata": { },
+    "bindata": { },
     "version": 2
-};
+}

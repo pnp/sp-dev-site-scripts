@@ -1,6 +1,5 @@
 {
     "actions": [
-
         {
             "verb": "addNavLink", /* optional - added to make it easier to access the site group settings */
             "url": "/_layouts/15/user.aspx",

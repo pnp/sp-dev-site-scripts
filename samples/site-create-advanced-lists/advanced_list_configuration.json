@@ -1,6 +1,6 @@
 {
     "$schema": "schema.json",
-    actions: [
+    "actions": [
         {
             "verb": "createSiteColumn",
             "fieldType": "Text",

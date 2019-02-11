@@ -9,7 +9,7 @@
                 "hourFormat": "24"
             }
         ],
-            "bindata": { },
+    "bindata": { },
     "version": 1
 }
 
