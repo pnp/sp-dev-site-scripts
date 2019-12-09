@@ -1,0 +1,28 @@
+{
+    "$schema": "schema.json",
+    "actions": [
+        {
+            "verb": "addNavLink",
+            "url": "/_layouts/15/groupstatus.aspx?target=planner",
+            "displayName": "Planner",
+            "navComponent":"QuickLaunch",
+            "isWebRelative": true
+        },
+        {
+            "verb": "addNavLink",
+            "url": "/_layouts/15/groupstatus.aspx?target=calendar",
+            "displayName": "Calendar",
+            "navComponent":"QuickLaunch",
+            "isWebRelative": true
+        },
+        {
+            "verb": "addNavLink",
+            "url": "/_layouts/15/groupstatus.aspx?target=team",
+            "displayName": "Team",
+            "navComponent":"QuickLaunch",
+            "isWebRelative": true
+        }        
+    ],
+    "bindata": { },
+    "version": 1
+}
