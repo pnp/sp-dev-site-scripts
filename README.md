@@ -1,3 +1,13 @@
+---
+page_type: sample
+products:
+- office-sp
+languages:
+- json
+extensions:
+  contentType: samples
+  createdDate: 12/12/2017 7:56:02 AM
+---
 # SharePoint Site Script samples
 
 You can use Site Scripts to customize how SharePoint sites are being provisioned. To do this, you construct a JSON object that describes the action to be applied when site is provisioned. You can also start external flow for the additional actions, if needed.
